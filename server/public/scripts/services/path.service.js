@@ -9,6 +9,7 @@ myApp.service('PathService', ['$http', function ($http) {
             url: '/all'
         }).then(function (response){
             console.log(response);
+            self.paths.list = response.data;
         })
     }
 }]);
