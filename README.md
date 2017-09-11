@@ -2,6 +2,8 @@
 
 One Paragraph of project description goes here. Link to the live version of the app if it's hosted on Heroku.
 
+PathFinder MN is a full-stack mobile web application designed for longboarders to locate the best paths to ride based on location, pavement conditions, length, and typical crowds. Any user will be able to see the existing data for paths and filter by rating, length, and location. A registered user will be able to make notes/edits on existing paths, post new paths to the database, and rate each path. 
+
 ## Built With
 
 List technologies and frameworks here
@@ -57,7 +59,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* Name of author(s)
+* Ami Schroeder
 
 
 ## Acknowledgments
