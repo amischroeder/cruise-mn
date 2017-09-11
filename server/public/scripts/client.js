@@ -7,7 +7,11 @@ myApp.config(function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/home', {
       templateUrl: '/views/templates/home.html',
-      controller: 'LoginController as lc',
+      controller: 'LoginController as lc'
+    })
+    .when('/all', {
+      templateUrl: 'views/templates/all.html',
+      controller: 'PathController as pc'
     })
     .when('/register', {
       templateUrl: '/views/templates/register.html',
