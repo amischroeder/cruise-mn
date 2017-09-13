@@ -1,5 +1,6 @@
 var myApp = angular.module('myApp', ['ngRoute']);
 
+
 /// Routes ///
 myApp.config(function($routeProvider, $locationProvider) {
   $locationProvider.hashPrefix('');
@@ -9,8 +10,12 @@ myApp.config(function($routeProvider, $locationProvider) {
       templateUrl: '/views/templates/home.html',
       controller: 'LoginController as lc'
     })
-    .when('/all', {
-      templateUrl: 'views/templates/all.html',
+    .when('/skatepaths', {
+      templateUrl: 'views/templates/skatepaths.html',
+      controller: 'PathController as pc'
+    })
+    .when('/new', {
+      templateUrl: 'views/templates/new.html',
       controller: 'PathController as pc'
     })
     .when('/register', {

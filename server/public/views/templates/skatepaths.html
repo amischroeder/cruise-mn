@@ -1,0 +1,23 @@
+<div ng-include="'views/partials/nav.html'"></div>
+<div class="allListingInfo">
+    <h1>GOOGLE MAP</h1>
+    <h1>FILTER BAR</h1>
+     <table>
+        <thead>
+            <tr>
+                <th>Path Title</th>
+                <th>Address</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="path in pc.paths.list">
+                <td>{{path.name}}</td>
+                <td>{{path.address}}</td>
+                <td>{{path.rating}}</td>
+            </tr>
+        </tbody>
+    </table> 
+    <!-- <jk-rating-stars max-rating="8" rating="ctrl.rating" read-only="ctrl.readOnly" on-rating="ctrl.onRating(rating)">
+    </jk-rating-stars> -->
+    </div> 

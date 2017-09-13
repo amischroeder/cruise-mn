@@ -1,0 +1,45 @@
+<div ng-include="'views/partials/nav.html'"></div>
+<h1>Post New Path!</h1>
+<form ng-controller="PathController as pc">
+    <div>
+        <label for="name">Path Name:</label>
+        <input type="text" ng-model="pc.newPath.name" id="name">
+    </div>
+    <div>
+        <label for="photos">Photos:</label>
+        <!-- <input type="text" ng-model="pc.newPath.name" id="name"> -->
+    </div>
+    <div>
+        <label for="address">Address:</label>
+        <input type="text" ng-model="pc.newPath.address" id="address">
+    </div>
+    <div>
+        <label for="rating">Rating:</label>
+        <!-- <input type="text" ng-model="pc.newPath.name" id="name"> -->
+    </div>
+    <div>
+        <label for="length">Length:</label>
+        <input type="text" ng-model="pc.newPath.length" id="length">
+    </div>
+    <div>
+        <label for="pavement">Pavement Condition:</label>
+        <textarea id="pavement" ng-model="pc.newPath.pavement"></textarea>
+    </div>
+    <div>
+        <label for="difficulty">Difficulty:</label>
+        <textarea id="difficulty" ng-model="pc.newPath.difficulty"></textarea>
+    </div>
+    <div>
+        <label for="crowds">Best Time To Cruise:</label>
+        <textarea id="crowds" ng-model="pc.newPath.crowds"></textarea>
+    </div>
+    <div>
+        <label for="notes">Other Notes:</label>
+        <textarea id="notes" ng-model="pc.newPath.notes"></textarea>
+    </div>
+    <div>
+        <label for="map">Parking:</label>
+        <!-- <input type="text" ng-model="pc.newPath.name" id="name"> -->
+    </div>
+    <button ng-click="pc.postNewPath(pc.newPath)">Post This Path!</button>
+</form>
