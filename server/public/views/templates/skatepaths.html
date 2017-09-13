@@ -12,7 +12,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="path in pc.paths.list">
-                <td>{{path.name}}</td>
+                <td><a ng-href="#/specific/{{path.id}}">{{path.name}}</a></td>
                 <td>{{path.address}}</td>
                 <td>{{path.rating}}</td>
             </tr>

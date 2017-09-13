@@ -22,6 +22,24 @@ router.get('/', function(req,res){
     });
 });
 
+router.get('/details', function(req, res){
+    pool.connect(function(errorConnectingToDatabase, client, done){
+        if(errorConnectingToDatabase) {
+            console.log('Error connecting to Database', errorConnectingToDatabase);
+            res.sendStatus(500);
+        } else {
+            client.query('SELECT * FROM paths WHERE id=$1', [req.query.id], function (errorMakingQuery, result) {
+                if(errorMakingQuery) {
+                    console.log('Error Making Query', errorMakingQuery);
+                    res.sendStatus(500);
+                } else {
+                    res.send(result.rows);
+                }
+            });
+        }
+    });
+});
+
 router.post('/new', function(req, res){
 	console.log('path post was hit:', req.body);
 	pool.connect(function(errorConnectingToDatabase, client, done){

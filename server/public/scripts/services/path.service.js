@@ -2,6 +2,7 @@ myApp.service('PathService', ['$http', function ($http) {
     console.log('PathService loaded');
     var self = this;
     self.paths = {list:[]};
+    self.currentPath = {details: {}};
 
     self.getPaths = function () {
         $http({
@@ -42,4 +43,17 @@ myApp.service('PathService', ['$http', function ($http) {
             self.getPaths();
         })
     }
+
+    self.getDetails = function(pathId) {
+        $http({
+            method: 'GET',
+            url: '/skatepaths/details/',
+            params: {
+                id: pathId
+            }
+        }).then(function(response){
+            self.currentPath.details = response.data
+        })
+    };
+
 }]);

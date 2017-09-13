@@ -18,6 +18,10 @@ myApp.config(function($routeProvider, $locationProvider) {
       templateUrl: 'views/templates/new.html',
       controller: 'PathController as pc'
     })
+    .when('/specific/:id', {
+      templateUrl: 'views/templates/specific.html',
+      controller: 'SpecificController as sc'
+    })
     .when('/register', {
       templateUrl: '/views/templates/register.html',
       controller: 'LoginController as lc'
