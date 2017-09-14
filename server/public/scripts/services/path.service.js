@@ -56,4 +56,21 @@ myApp.service('PathService', ['$http', function ($http) {
         })
     };
 
+    self.updatePathInformation = function(pathId) {
+        console.log('pathId:', pathId);
+        $http({
+            method: 'PUT',
+            url: '/skatepaths/details/',
+            params: {
+                id: pathId
+            },
+            data: self.path
+        }).then(function (response){
+            self.getPaths();
+            self.path = {};
+        })
+    }
+
+    
+
 }]);

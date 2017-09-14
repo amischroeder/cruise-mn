@@ -10,4 +10,5 @@ myApp.controller('PathController', ['PathService', function (PathService) {
         console.log('newPath:', newPath);
         PathService.postNewPath(newPath);
     }
+
 }]);

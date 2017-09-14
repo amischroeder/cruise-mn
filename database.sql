@@ -3,7 +3,7 @@ CREATE TABLE "paths" (
   "name" varchar(120) not null,
   "photos" varchar(240),
   "address" varchar(200) not null,
-  "rating" varchar(50),
+  "rating" varchar(150),
   "length" varchar(350) not null,
   "pavement" varchar (380) not null,
   "difficulty" varchar (380) not null,
@@ -32,3 +32,14 @@ VALUES('Battle Creek Regional Park (AKA Suicide Hill)',
 'It opens half hour before sunrise until a half hour after sunset so early or late like that is usually the best time to go for fewer people. The parking lot is only open seasonally so it can get pretty busy especially in the middle of summer.',
 'If pinned parking lot is closed, you can park on the street at Upper Afton Rd and go either direction on the path.',
 'Lat= 44.9354, Long= -93.0286');
+
+INSERT INTO paths (name, address, rating, length, pavement, difficulty, crowds, notes, map)
+VALUES ('Gateway State Trail',
+'For lot near smoothest section- 9131 Keswick Ave N, Stillwater, MN 55082',
+'3.5 stars for pavement condition and view, but it is a little boring without many hills/curves',
+'The full path is 18.3 miles from St. Paul to Stillwater',
+'Pavement is rougher in the St. Paul portion so parking and starting at the pin in Stillwater will get you to the smoothest spot. Great for beginners!',
+'Pretty flat in St. Paul portion, but near Stillwater has some fun little hills, nothing major. A few bridges to go over, but in general a beginner would do fine here.',
+'Tons of bike traffic so best to go in early am or evenings',
+'You can also park at the end of the path at Pine Point Park if you have a Washington County pass (or a fee) which is pretty smooth and flat',
+'Lat= 45.0805, Long= -92.8970');
