@@ -1,7 +1,7 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <br>
 <br>
-<a href="#new">Post New Path</a>
+<!-- <a href="#new">Post New Path</a> -->
 <div class="allListingInfo" layout="column">
     <h1>GOOGLE MAP</h1>
     <h1>FILTER BAR</h1>
@@ -18,27 +18,7 @@
                 <td><a ng-href="#/specific/{{path.id}}">{{path.name}}</a></td>
                 <td>{{path.address}}</td>
                 <td>{{path.rating}}</td>
-                <!-- <td><button>Update This Path</button></td> -->
             </tr>
         </tbody>
     </table>
-    <!-- <jk-rating-stars max-rating="8" rating="ctrl.rating" read-only="ctrl.readOnly" on-rating="ctrl.onRating(rating)">
-    </jk-rating-stars> -->
-    <!-- <div layout="row" layout-xs="column">
-            <div flex class="first-box">
-                I'm above on mobile, and left on larger screens.
-            </div>
-            <div flex class="second-box">
-                I'm below on mobile, and right on larger screens.
-            </div>
-           </div>
-           <div layout="row" layout-wrap layout-margin layout-align="center">
-               <md-button class="md-primary md-raised" ng-click="mc.showAlert($event)">Alert Dialog</md-button>
-               <md-button class="md-raised" ng-click="mc.showToast($event)">Show me the Toast!</md-button>
-           </div>
-    <div class="container" layout="row" layout-align="center center">
-        <div layout="row" class="second-box" layout-align="center center">
-            I'm awesome!
-        </div>
-    </div> -->
 </div>
