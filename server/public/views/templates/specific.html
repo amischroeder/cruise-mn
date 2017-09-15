@@ -1,16 +1,74 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div ng-app="myApp" ng-controller="SpecificController as sc">
     <h1>Specific Page</h1>
-    {{sc.currentPath}}
+    <table ng-repeat="path in sc.currentPath.details">
+        <tr>
+            <th>Path Title</th>
+            <td>{{path.name}}</td>
+        </tr>
+        <tr>
+            <th>Photos</th>
+            <td>{{path.photos}}</td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td>{{path.address}}</td>
+        </tr>
+        <tr>
+            <th>Rating</th>
+            <td>{{path.rating}}</td>
+        </tr>
+        <tr>
+            <th>Length</th>
+            <td>{{path.length}}</td>
+        </tr>
+        <tr>
+            <th>Pavement</th>
+            <td>{{path.pavement}}</td>
+        </tr>
+        <tr>
+            <th>Difficulty</th>
+            <td>{{path.difficulty}}</td>
+        </tr>
+        <tr>
+            <th>Crowds</th>
+            <td>{{path.crowds}}</td>
+        </tr>
+        <tr>
+            <th>Notes</th>
+            <td>{{path.notes}}</td>
+        </tr>
+        <tr>
+            <th>Map</th>
+            <td>{{path.map}}</td>
+        </tr>
+
+
+        <!-- <tr ng-repeat="path in sc.currentPath.details">
+                <td>{{path.name}}</td>
+                <td>{{path.photos}}</td>
+                <td>{{path.address}}</td>
+                <td>{{path.rating}}</td>
+                <td>{{path.length}}</td>
+                <td>{{path.pavement}}</td>
+                <td>{{path.difficulty}}</td>
+                <td>{{path.crowds}}</td>
+                <td>{{path.notes}}</td>
+                <td>{{path.map}}</td> -->
+        <!-- <td><button>Update This Path</button></td> -->
+        <!-- </tr> -->
+
+    </table>
+    <!-- {{sc.currentPath.details[0].name}} -->
     <br>
     <br>
     <button ng-click="show = !show">Update this Path</button>
-    <a href="#skatepaths">Back to Listings</a> 
+    <a href="#skatepaths">Back to Listings</a>
 
     <form ng-show="show" ng-submit="submitForm()">
         <div>
             <label for="name">Path Name:</label>
-            <input type="text" ng-model="sc.path.name" id="name">
+            <input ng-model="sc.path.name" id="name">
         </div>
         <div>
             <label for="photos">Photos:</label>
@@ -18,7 +76,7 @@
         </div>
         <div>
             <label for="address">Address:</label>
-            <input type="text" ng-model="sc.path.address" id="address">
+            <input ng-model="sc.path.address" id="address">
         </div>
         <div>
             <label for="rating">Rating:</label>
@@ -26,23 +84,23 @@
         </div>
         <div>
             <label for="length">Length:</label>
-            <input type="text" ng-model="sc.path.length" id="length">
+            <input ng-model="sc.path.length" id="length">
         </div>
         <div>
             <label for="pavement">Pavement Condition:</label>
-            <textarea id="pavement" ng-model="sc.path.pavement"></textarea>
+            <input id="pavement" ng-model="sc.path.pavement"></textarea>
         </div>
         <div>
             <label for="difficulty">Difficulty:</label>
-            <textarea id="difficulty" ng-model="sc.path.difficulty"></textarea>
+            <input id="difficulty" ng-model="sc.path.difficulty"></textarea>
         </div>
         <div>
             <label for="crowds">Best Time To Cruise:</label>
-            <textarea id="crowds" ng-model="sc.path.crowds"></textarea>
+            <input id="crowds" ng-model="sc.path.crowds"></textarea>
         </div>
         <div>
             <label for="notes">Other Notes:</label>
-            <textarea id="notes" ng-model="sc.path.notes"></textarea>
+            <input id="notes" ng-model="sc.path.notes"></textarea>
         </div>
         <div>
             <label for="map">Parking:</label>
