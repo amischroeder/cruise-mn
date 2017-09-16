@@ -79,3 +79,13 @@ li a:hover {
   color: #eee;
 }
 
+/* These are for the a links I addded for site navigation */
+.navLink:link, .navLink:visited {
+  background-color: #03A9F4;
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+}
