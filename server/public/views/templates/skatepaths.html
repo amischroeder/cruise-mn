@@ -10,7 +10,8 @@
         <marker position="44.7667, -92.9360" title="Lake Rebecca Park"></marker>
     </ng-map>
 
-    <h1>FILTER BAR</h1>
+    
+    <p>Search Listings: <input type="text" ng-model="search"></p>
 
     <table>
         <thead>
@@ -21,7 +22,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="path in pc.paths.list">
+            <tr ng-repeat="path in pc.paths.list | filter:search">
                 <td><a ng-href="#/specific/{{path.id}}">{{path.name}}</a></td>
                 <td>{{path.address}}</td>
                 <td>
