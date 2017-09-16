@@ -1,6 +1,6 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div ng-app="myApp" ng-controller="SpecificController as sc">
-    <h1>Specific Page</h1>
+    <h1>Specific Page</h1> 
     <table ng-repeat="path in sc.currentPath.details">
         <tr>
             <th>Path Title</th>
@@ -16,7 +16,10 @@
         </tr>
         <tr>
             <th>Rating</th>
-            <td>{{path.rating}}</td>
+            <td>{{path.rating}}
+                <button><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+                <button><i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
+            </td>
         </tr>
         <tr>
             <th>Length</th>

@@ -1,10 +1,17 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <br>
 <br>
-<!-- <a href="#new">Post New Path</a> -->
 <div class="allListingInfo" layout="column">
-    <h1>GOOGLE MAP</h1>
+    <ng-map center="46.3348, -95.6647" zoom="6">
+        <marker position="46.3348, -95.6647" title="Glendalough"></marker>
+        <marker position="44.9354, -93.0286" title="Battle Creek"></marker>
+        <marker position="45.0805, -92.8970" title="Gateway/Brown's"></marker>
+        <marker position="44.7580, -92.8678" title="Lake Rebecca Park"></marker>
+        <marker position="44.7667, -92.9360" title="Lake Rebecca Park"></marker>
+    </ng-map>
+
     <h1>FILTER BAR</h1>
+
     <table>
         <thead>
             <tr>
@@ -17,18 +24,19 @@
             <tr ng-repeat="path in pc.paths.list">
                 <td><a ng-href="#/specific/{{path.id}}">{{path.name}}</a></td>
                 <td>{{path.address}}</td>
-                <td>{{path.rating}}</td>
+                <td>
+                    {{path.rating}}
+                    <button ng-click="pc.thumbsUp()">{{pc.upCount}}<i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+                    <button ng-click="pc.thumbsDown()">{{pc.downCount}}<i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
+                </td>
             </tr>
         </tbody>
     </table>
-</div>
 
-<!-- <ng-map zoom="11" center="[0,0]">
-    <shape id="circle" name="circle" centered="true" stroke-color='#FF0000' stroke-opacity="0.8" stroke-weight="2" center="current-position"
-        radius="4000" editable="true"></shape>
-</ng-map> -->
-<ng-map center="46.3348, -95.6647" zoom="4">
-    <marker position="46.3348, -95.6647" title="Glendalough"></marker>
-    <marker position="44.9354, -93.0286" title="Battle Creek"></marker>
-    <marker position="45.0805, -92.8970" title="Hello World!"></marker>
-</ng-map>
+</div>
+<br>
+<br>
+<a href="#new">Post New Path</a>
+<br>
+<br>
+<br>
