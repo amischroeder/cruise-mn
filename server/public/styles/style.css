@@ -6,7 +6,7 @@ body, html {
 }
 
 .instructions .container h1 {
-  font-size: 32px;
+  font-size: 50px;
   font-weight: 600;
 }
 
@@ -89,3 +89,4 @@ li a:hover {
   display: inline-block;
   border-radius: 10px;
 }
+

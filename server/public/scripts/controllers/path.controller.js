@@ -4,7 +4,9 @@ myApp.controller('PathController', ['PathService', function (PathService) {
     vm.paths = PathService.paths;
 
 
+
     PathService.getPaths();
+    vm.updateRating = PathService.updateUpRating;
     
     vm.postNewPath = function (newPath) {
         console.log('post button clicked');
@@ -12,16 +14,6 @@ myApp.controller('PathController', ['PathService', function (PathService) {
         PathService.postNewPath(newPath);
     }
 
-    vm.upCount = 0;
-    vm.thumbsUp = function() {
-        vm.upCount++
-        console.log(vm.upCount);
-    }
 
-    vm.downCount = 0;
-    vm.thumbsDown = function() {
-        vm.downCount++
-        console.log(vm.downCount);
-    }
 
 }]);

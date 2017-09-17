@@ -71,6 +71,16 @@ myApp.service('PathService', ['$http', function ($http) {
         })
     }
 
+    self.updateUpRating = function(trail) {
+        console.log('ze butto has been clicka');
+        $http({
+            method: 'PUT',
+            url: '/skatepaths/upRating',
+            data: trail
+        }).then(function(response){
+            self.getPaths();
+        });
+    }
     
 
 }]);
