@@ -113,6 +113,7 @@ router.put('/downRating', function(req, res){
             res.sendStatus(500);
         } else {
             client.query('UPDATE paths SET down_rating=$1 WHERE id=$2', [req.body.down_rating, req.body.id], function (errorMakingQuery, result) {
+				done();
                 if(errorMakingQuery) {
                     console.log('Error Making Query', errorMakingQuery);
                     res.sendStatus(500);

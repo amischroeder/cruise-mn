@@ -9,4 +9,8 @@ myApp.controller('SpecificController', ['PathService', '$routeParams', function(
     vm.pathInformation = function() {
         PathService.updatePathInformation = vm.path;
     }
+
+    vm.updateUpRating = PathService.updateUpRating;
+    vm.updateDownRating = PathService.updateDownRating;
+
 }]);

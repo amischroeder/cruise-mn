@@ -44,12 +44,12 @@ myApp.service('PathService', ['$http', function ($http) {
         })
     }
 
-    self.getDetails = function(pathId) {
+    self.getDetails = function(pathID) {
         $http({
             method: 'GET',
             url: '/skatepaths/details/',
             params: {
-                id: pathId
+                id: pathID
             }
         }).then(function(response){
             self.currentPath.details = response.data
@@ -78,7 +78,7 @@ myApp.service('PathService', ['$http', function ($http) {
             url: '/skatepaths/upRating',
             data: trail
         }).then(function(response){
-            self.getPaths();
+            trail.up_rating += 1;
         });
     }
 
@@ -89,7 +89,7 @@ myApp.service('PathService', ['$http', function ($http) {
             url: '/skatepaths/downRating',
             data: trail
         }).then(function(response){
-            self.getPaths();
+            trail.down_rating += 1;
         });
     }
     

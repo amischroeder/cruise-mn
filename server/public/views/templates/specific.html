@@ -17,8 +17,8 @@
         <tr>
             <th>Rating</th>
             <td>{{path.rating}}
-                <button><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
-                <button><i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
+                <button ng-click="sc.updateUpRating(path)">{{path.up_rating}}<i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+                <button ng-click="sc.updateDownRating(path)">{{path.down_rating}}><i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
             </td>
         </tr>
         <tr>
@@ -45,22 +45,6 @@
             <th>Map</th>
             <td>{{path.map}}</td>
         </tr>
-
-
-        <!-- <tr ng-repeat="path in sc.currentPath.details">
-                <td>{{path.name}}</td>
-                <td>{{path.photos}}</td>
-                <td>{{path.address}}</td>
-                <td>{{path.rating}}</td>
-                <td>{{path.length}}</td>
-                <td>{{path.pavement}}</td>
-                <td>{{path.difficulty}}</td>
-                <td>{{path.crowds}}</td>
-                <td>{{path.notes}}</td>
-                <td>{{path.map}}</td> -->
-        <!-- <td><button>Update This Path</button></td> -->
-        <!-- </tr> -->
-
     </table>
     <!-- {{sc.currentPath.details[0].name}} -->
     <br>
