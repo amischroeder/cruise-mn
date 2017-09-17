@@ -1,7 +1,10 @@
 myApp.service('PathService', ['$http', function ($http) {
     console.log('PathService loaded');
     var self = this;
-    self.paths = {list:[]};
+    self.paths = {
+        list:[],
+        path: {}
+    };
     self.currentPath = {details: {}};
 
     self.getPaths = function () {
@@ -11,6 +14,7 @@ myApp.service('PathService', ['$http', function ($http) {
         }).then(function (response){
             console.log(response);
             self.paths.list = response.data;
+            self.paths.path = self.paths.list[0];
         })
     };
 

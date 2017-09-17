@@ -1,16 +1,22 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <br>
+{{ pc.paths.path }}
 <br>
 <div class="allListingInfo" layout="column">
-    <ng-map center="46.3348, -95.6647" zoom="6">
-        <marker position="46.3348, -95.6647" title="Glendalough"></marker>
-        <marker position="44.9354, -93.0286" title="Battle Creek"></marker>
-        <marker position="45.0805, -92.8970" title="Gateway/Brown's"></marker>
-        <marker position="44.7580, -92.8678" title="Lake Rebecca Park"></marker>
-        <marker position="44.7667, -92.9360" title="Lake Rebecca Park"></marker>
+    <ng-map default-style="true" id="all_map" center="46.3348, -95.6647" zoom="6">
+        <marker id="{{path.id}}" position="{{path.latitude}}, {{path.longitude}}" 
+            ng-repeat="path in pc.paths.list" 
+            on-click="pc.showDetail(path)">
+        </marker>
+        <info-window id="foo-iw">
+            <div ng-non-bindable="">
+                {{pc.paths.path.name}}
+                    <p>Blah Blah Directions here:</p>
+            </div>
+        </info-window>
     </ng-map>
 
-    
+
     <p>Search Listings: <input type="text" ng-model="search"></p>
 
     <table>
@@ -26,7 +32,6 @@
                 <td><a ng-href="#/specific/{{path.id}}">{{path.name}}</a></td>
                 <td>{{path.address}}</td>
                 <td>
-                    <!-- {{path.rating}} -->
                     <button ng-click="pc.updateUpRating(path)">{{path.up_rating}}<i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
                     <button ng-click="pc.updateDownRating(path)">{{path.down_rating}}<i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
                 </td>
