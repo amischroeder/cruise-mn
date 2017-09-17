@@ -104,4 +104,24 @@ router.put('/upRating', function(req, res){
     });
 });
 
+router.put('/downRating', function(req, res){
+	console.log('put was received:', req.body);
+	req.body.down_rating += 1;
+    pool.connect(function(errorConnectingToDatabase, client, done){
+        if(errorConnectingToDatabase) {
+            console.log('Error connecting to Database', errorConnectingToDatabase);
+            res.sendStatus(500);
+        } else {
+            client.query('UPDATE paths SET down_rating=$1 WHERE id=$2', [req.body.down_rating, req.body.id], function (errorMakingQuery, result) {
+                if(errorMakingQuery) {
+                    console.log('Error Making Query', errorMakingQuery);
+                    res.sendStatus(500);
+                } else {
+                    res.send(result.rows);
+                }
+            });
+        }
+    });
+});
+
 module.exports = router;

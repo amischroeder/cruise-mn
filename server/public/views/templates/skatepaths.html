@@ -27,8 +27,8 @@
                 <td>{{path.address}}</td>
                 <td>
                     <!-- {{path.rating}} -->
-                    <button ng-click="pc.updateRating(path)">{{path.up_rating}}<i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
-                    <button ng-click="pc.thumbsDown()">{{pc.downCount}}<i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
+                    <button ng-click="pc.updateUpRating(path)">{{path.up_rating}}<i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+                    <button ng-click="pc.updateDownRating(path)">{{path.down_rating}}<i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
                 </td>
             </tr>
         </tbody>

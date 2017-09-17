@@ -6,7 +6,8 @@ myApp.controller('PathController', ['PathService', function (PathService) {
 
 
     PathService.getPaths();
-    vm.updateRating = PathService.updateUpRating;
+    vm.updateUpRating = PathService.updateUpRating;
+    vm.updateDownRating = PathService.updateDownRating;
     
     vm.postNewPath = function (newPath) {
         console.log('post button clicked');
