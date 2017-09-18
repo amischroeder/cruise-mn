@@ -4,17 +4,18 @@
 <br>
 <div class="allListingInfo" layout="column">
     <ng-map default-style="true" id="all_map" center="46.3348, -95.6647" zoom="6">
-        <marker id="{{path.id}}" position="{{path.latitude}}, {{path.longitude}}" 
-            ng-repeat="path in pc.paths.list" 
-            on-click="pc.showDetail(path)">
+        <marker id="{{path.id}}" position="{{path.latitude}}, {{path.longitude}}" ng-repeat="path in pc.paths.list" on-click="pc.showDetail(path)">
         </marker>
         <info-window id="foo-iw">
             <div ng-non-bindable="">
                 {{pc.paths.path.name}}
+                <br> {{pc.paths.path.address}}
                 <br>
-                {{pc.paths.path.address}}
-                <br>
-                <p>Directions:</p>
+                <p>Get Directions Here:
+                    <a href="http://www.google.com/maps/dir/{{pc.paths.path.latitude}},{{pc.paths.path.longitude}}">
+                        http://www.google.com/maps/dir/{{pc.paths.path.latitude}},{{pc.paths.path.longitude}}
+                    </a>
+                </p>
             </div>
         </info-window>
     </ng-map>
