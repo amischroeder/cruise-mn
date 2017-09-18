@@ -24,7 +24,7 @@ myApp.controller('PathController', ['PathService', 'NgMap', function (PathServic
     vm.showDetail = function(e, path) {
         console.log(path);
         vm.paths.path = path;
-        vm.map.showInfoWindow('foo-iw', path);
+        vm.map.showInfoWindow('foo-iw', this);
       };
 
 }]);
