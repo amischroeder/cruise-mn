@@ -1,6 +1,6 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div ng-app="myApp" ng-controller="SpecificController as sc">
-    <h1>Specific Page</h1> 
+    <h1>Specific Page</h1>
     <table ng-repeat="path in sc.currentPath.details">
         <tr>
             <th>Path Title</th>
@@ -41,17 +41,31 @@
             <th>Notes</th>
             <td>{{path.notes}}</td>
         </tr>
-        <tr>
-            <th>Map</th>
-            <td>{{path.map}}</td>
-        </tr>
     </table>
-    <!-- {{sc.currentPath.details[0].name}} -->
     <br>
     <br>
     <button ng-click="show = !show">Update this Path</button>
     <a class="navLink" href="#skatepaths">Back to Listings</a>
 
+    <ng-map default-style="true" id="specific_map" center="46.3348, -95.6647" zoom="6">
+        <marker id="{{path.id}}" position="{{path.latitude}}, {{path.longitude}}" 
+        ng-repeat="path in sc.currentPath.details" on-click="sc.showDetail(path)">
+        </marker>
+        <info-window id="boo-iw">
+            <div ng-non-bindable="">
+                {{sc.paths.path.name}}
+                <br>
+                <p>Get Directions Here:
+                    <a href="http://www.google.com/maps/dir/{{sc.paths.path.latitude}},{{sc.paths.path.longitude}}">
+                            http://www.google.com/maps/dir/{{sc.paths.path.latitude}},{{sc.paths.path.longitude}}
+                        </a>
+                </p>
+            </div>
+        </info-window>
+    </ng-map>
+
+
+    <!-- UPDATE THAT DOES NOT WORK: -->
     <form ng-show="show" ng-submit="submitForm()">
         <div>
             <label for="name">Path Name:</label>

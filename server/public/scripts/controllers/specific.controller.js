@@ -1,8 +1,15 @@
-myApp.controller('SpecificController', ['PathService', '$routeParams', function(PathService, $routeParams){
+myApp.controller('SpecificController', ['PathService', '$routeParams', 'NgMap', function(PathService, $routeParams, NgMap){
     var vm = this;
     vm.currentPath = PathService.currentPath;
     console.log('$routeParams', $routeParams);
     PathService.getDetails($routeParams.id);
+
+    //this is to get info window on specific marker
+    vm.map = {};
+    NgMap.getMap("specific_map").then(function(map) {
+        vm.map = map;
+      });
+    vm.paths = PathService.paths;
 
     vm.path = {};
     
@@ -13,4 +20,9 @@ myApp.controller('SpecificController', ['PathService', '$routeParams', function(
     vm.updateUpRating = PathService.updateUpRating;
     vm.updateDownRating = PathService.updateDownRating;
 
+    vm.showDetail = function(e, path) {
+        console.log(path);
+        vm.paths.path = path;
+        vm.map.showInfoWindow('boo-iw', this);
+      };
 }]);
