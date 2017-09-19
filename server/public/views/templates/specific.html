@@ -1,15 +1,14 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div ng-app="myApp" ng-controller="SpecificController as sc">
-    <h1>Specific Page</h1>
     <table ng-repeat="path in sc.currentPath.details">
         <tr>
             <th>Path Title</th>
             <td>{{path.name}}</td>
         </tr>
-        <tr>
+        <!-- <tr>
             <th>Photos</th>
             <td>{{path.photos}}</td>
-        </tr>
+        </tr> -->
         <tr>
             <th>Address</th>
             <td>{{path.address}}</td>
@@ -43,10 +42,6 @@
         </tr>
     </table>
     <br>
-    <br>
-    <button ng-click="show = !show">Update this Path</button>
-    <a class="navLink" href="#skatepaths">Back to Listings</a>
-
     <ng-map default-style="true" id="specific_map" center="46.3348, -95.6647" zoom="6">
         <marker id="{{path.id}}" position="{{path.latitude}}, {{path.longitude}}" 
         ng-repeat="path in sc.currentPath.details" on-click="sc.showDetail(path)">
@@ -63,50 +58,11 @@
             </div>
         </info-window>
     </ng-map>
-
-
-    <!-- UPDATE THAT DOES NOT WORK: -->
-    <form ng-show="show" ng-submit="submitForm()">
-        <div>
-            <label for="name">Path Name:</label>
-            <input ng-model="sc.path.name" id="name">
-        </div>
-        <div>
-            <label for="photos">Photos:</label>
-            <!-- <input type="text" ng-model="pc.newPath.name" id="name"> -->
-        </div>
-        <div>
-            <label for="address">Address:</label>
-            <input ng-model="sc.path.address" id="address">
-        </div>
-        <div>
-            <label for="rating">Rating:</label>
-            <!-- <input type="text" ng-model="pc.newPath.name" id="name"> -->
-        </div>
-        <div>
-            <label for="length">Length:</label>
-            <input ng-model="sc.path.length" id="length">
-        </div>
-        <div>
-            <label for="pavement">Pavement Condition:</label>
-            <input id="pavement" ng-model="sc.path.pavement"></textarea>
-        </div>
-        <div>
-            <label for="difficulty">Difficulty:</label>
-            <input id="difficulty" ng-model="sc.path.difficulty"></textarea>
-        </div>
-        <div>
-            <label for="crowds">Best Time To Cruise:</label>
-            <input id="crowds" ng-model="sc.path.crowds"></textarea>
-        </div>
-        <div>
-            <label for="notes">Other Notes:</label>
-            <input id="notes" ng-model="sc.path.notes"></textarea>
-        </div>
-        <div>
-            <label for="map">Parking:</label>
-            <!-- <input type="text" ng-model="pc.newPath.name" id="name"> -->
-        </div>
-        <input type="submit">
-    </form>
+    <br>
+    <!-- {{sc.currentPath.details}}
+    {{sc.currentPath.details[0].id}} -->
+    <button ng-click="sc.deletePath(sc.pathID)">Delete Path</button>
+    <a class="navLink" href="#skatepaths">Back to Listings</a>
+    <br>
+    <br>
 </div>

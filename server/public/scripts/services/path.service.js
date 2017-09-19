@@ -18,24 +18,6 @@ myApp.service('PathService', ['$http', function ($http) {
         })
     };
 
-    //     self.getSinglePath = function (id) {
-    //     $http({
-    //         method: 'GET',
-    //         url: '/skatepaths',
-    //         params: {id: id}
-    //     }).then(function (response){
-    //         console.log(response);
-    //         self.path = response.data;
-    //         $http({
-    //             method: 'GET',
-    //             url: '/skatepaths/photos' + self.path.id,
-    //             params: {id : self.path.id}
-    //         }).then(function(response){
-    //             self.path.photos = response.data;
-    //         })
-    //     })
-    // };
-
     self.postNewPath = function(newPath) {
         console.log('newPath:', newPath);
         $http({
@@ -60,21 +42,6 @@ myApp.service('PathService', ['$http', function ($http) {
         })
     };
 
-    self.updatePathInformation = function(pathId) {
-        console.log('pathId:', pathId);
-        $http({
-            method: 'PUT',
-            url: '/skatepaths/details/',
-            params: {
-                id: pathId
-            },
-            data: self.path
-        }).then(function (response){
-            self.getPaths();
-            self.path = {};
-        })
-    }
-
     self.updateUpRating = function(trail) {
         console.log('ze butto has been clicka');
         $http({
@@ -97,5 +64,17 @@ myApp.service('PathService', ['$http', function ($http) {
         });
     }
     
+    self.deletePath = function (pathID) {
+        console.log('delete clicked', pathID);
+        $http({
+            method: 'DELETE',
+            url: '/specific/' + pathID
+            // params: {
+            //     id: pathID
+            // }
+        }).then(function(response){
+            self.getPaths();
+        })
+    }
 
 }]);

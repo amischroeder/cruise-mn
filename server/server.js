@@ -30,7 +30,8 @@ app.use(passport.session());
 // Routes
 app.use('/register', registerRouter);
 app.use('/user', userRouter);
-app.use('/skatepaths', skatepaths)
+app.use('/skatepaths', skatepaths);
+app.use('/specific', skatepaths);
 
 // Catch all bucket, must be last!
 app.use('/', indexRouter);

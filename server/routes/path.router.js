@@ -47,8 +47,8 @@ router.post('/new', function(req, res){
 			console.log('Error connecting to database', errorConnectingToDatabase);
 			res.sendStatus(500);
 		} else {
-            client.query('INSERT INTO paths (name, photos, address, rating, length, pavement, difficulty, crowds, notes, map) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10);', 
-            [req.body.name, req.body.photos, req.body.address, req.body.rating, req.body.length, req.body.pavement, req.body.difficulty, req.body.crowds, req.body.notes, req.body.map], function(errorMakingQuery, result) {
+            client.query('INSERT INTO paths (name, photos, address, length, pavement, difficulty, crowds, notes, latitude, longitude) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10);', 
+            [req.body.name, req.body.photos, req.body.address, req.body.length, req.body.pavement, req.body.difficulty, req.body.crowds, req.body.notes, req.body.latitude, req.body.longitude], function(errorMakingQuery, result) {
 				done();
 				if(errorMakingQuery) {
 					console.log('Error making database query', errorMakingQuery);
@@ -60,29 +60,6 @@ router.post('/new', function(req, res){
 		}
 	});
 });
-
-// router.put('/:id', function(req, res){
-// 	var pathId = req.params.id; 
-// 	console.log('put was hit!');
-// 	pool.connect(function(err, db, done){
-// 		if(err) {
-// 			console.log('Error connecting to database', err);
-// 			res.sendStatus(500);
-// 		} else {
-// 			db.query('UPDATE paths SET name=$1, photos=$2, address=$3, rating=$4, length=$5, pavement=$6, difficulty=$7, crowds=$8, notes=$9, map=$10 WHERE id=$11;', 
-// 							[req.body.name, req.body.photos, req.body.address, req.body.rating, req.body.length, req.body.pavement, req.body.difficulty, req.body.crowds, req.body.notes, req.body.map, pathId], 
-// 							function(errorMakingQuery, result) {
-// 				done();
-// 				if(errorMakingQuery) {
-// 					console.log('Error making database query', errorMakingQuery);
-// 					res.sendStatus(500);
-// 				} else {
-// 					res.sendStatus(200);
-// 				}
-// 			});
-// 		}
-// 	});
-// });
 
 router.put('/upRating', function(req, res){
 	console.log('put was received:', req.body);
@@ -123,6 +100,29 @@ router.put('/downRating', function(req, res){
             });
         }
     });
+});
+
+router.delete('/:id', function(req, res){
+	var pathId = req.params.id; 
+	console.log('delete was hit!');
+	pool.connect(function(errorConnectingToDatabase, client, done){
+		if(errorConnectingToDatabase) {
+			console.log('Error connecting to database', errorConnectingToDatabase);
+			res.sendStatus(500);
+		} else {
+			client.query('DELETE FROM paths WHERE id=$1;', 
+							[pathId], 
+							function(errorMakingQuery, result) {
+				done();
+				if(errorMakingQuery) {
+					console.log('Error making database query', errorMakingQuery);
+					res.sendStatus(500);
+				} else {
+					res.sendStatus(200);
+				}
+			});
+		}
+	});
 });
 
 module.exports = router;

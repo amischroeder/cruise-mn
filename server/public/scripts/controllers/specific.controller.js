@@ -1,4 +1,4 @@
-myApp.controller('SpecificController', ['PathService', '$routeParams', 'NgMap', function(PathService, $routeParams, NgMap){
+myApp.controller('SpecificController', ['PathService', '$routeParams', 'NgMap', '$location', function(PathService, $routeParams, NgMap, $location){
     var vm = this;
     vm.currentPath = PathService.currentPath;
     console.log('$routeParams', $routeParams);
@@ -13,9 +13,9 @@ myApp.controller('SpecificController', ['PathService', '$routeParams', 'NgMap', 
 
     vm.path = {};
     
-    vm.pathInformation = function() {
-        PathService.updatePathInformation = vm.path;
-    }
+    // vm.pathInformation = function() {
+    //     PathService.updatePathInformation = vm.path;
+    // }
 
     vm.updateUpRating = PathService.updateUpRating;
     vm.updateDownRating = PathService.updateDownRating;
@@ -25,4 +25,11 @@ myApp.controller('SpecificController', ['PathService', '$routeParams', 'NgMap', 
         vm.paths.path = path;
         vm.map.showInfoWindow('boo-iw', this);
       };
+
+    vm.deletePath = function () {
+      console.log('pathID:', $routeParams.id);
+      PathService.deletePath($routeParams.id);
+      $location.path("/skatepaths");
+  };
+
 }]);
