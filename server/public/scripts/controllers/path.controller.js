@@ -5,7 +5,7 @@ myApp.controller('PathController', ['PathService', 'NgMap', function (PathServic
     NgMap.getMap("all_map").then(function (map) {
         console.log('this is that map', map);
         vm.map = map;
-        google.maps.event.trigger(map,'resize');
+        google.maps.event.trigger(map, 'resize');
     });
 
     vm.paths = PathService.paths;
@@ -30,11 +30,10 @@ myApp.controller('PathController', ['PathService', 'NgMap', function (PathServic
     vm.client = filestack.init('AOxruw8HTHChjTQjVfU0rz');
     vm.showPicker = function () {
         vm.client.pick({
+            accept: 'image/*',
         }).then(function (result) {
-            vm.paths.newPath.photos = result.filesUploaded[0].url;
-            console.log(vm.newPath.photos)
-            console.log(JSON.stringify(result.filesUploaded))
+            vm.newPath.photos = result.filesUploaded[0].url;
         });
-    };
 
+    }
 }]);
