@@ -43,8 +43,7 @@
     </table>
     <br>
     <ng-map default-style="true" id="specific_map" center="current-position" zoom="6">
-        <marker id="{{path.id}}" position="{{path.latitude}}, {{path.longitude}}" 
-        ng-repeat="path in sc.currentPath.details" on-click="sc.showDetail(path)">
+        <marker id="{{path.id}}" position="{{path.latitude}}, {{path.longitude}}" ng-repeat="path in sc.currentPath.details" on-click="sc.showDetail(path)">
         </marker>
         <info-window id="boo-iw">
             <div ng-non-bindable="">
@@ -61,7 +60,10 @@
     <br>
     <!-- {{sc.currentPath.details}}
     {{sc.currentPath.details[0].id}} -->
-    <button ng-click="sc.deletePath(sc.pathID)">Delete Path</button>
+    <md-button class="md-primary md-raised" ng-click="mc.showConfirm($event)">
+        Delete Path
+    </md-button>
+    <!-- <button ng-click="sc.deletePath(sc.pathID)">Delete Path</button> -->
     <a class="navLink" href="#skatepaths">Back to Listings</a>
     <br>
     <br>
