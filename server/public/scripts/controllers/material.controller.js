@@ -12,7 +12,7 @@ myApp.controller('MaterialController', ['PathService', '$mdDialog', '$mdToast','
     vm.status = '  ';
     vm.showConfirm = function(ev) {
         var confirm = $mdDialog.confirm()
-        .title('Do you really want to delete this path?')
+        .title('ARE YOU SURE YOU WANT TO DELETE THIS RADICAL PATH?')
         .targetEvent(ev)
         .ok('Yep!')
         .cancel('Nevermind');

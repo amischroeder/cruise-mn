@@ -40,7 +40,8 @@
     </md-input-container>
     <md-input-container class="md-block">
         <label for="photos">Photos:</label>
-        <input type="button" value="Upload" ng-model="pc.newPath.photos" ng-click="pc.showPicker()" />
+        <!-- TOOK OUT ng-model="pc.newPath.photos" FROM BELOW -->
+        <input type="button" value="Upload" ng-click="pc.showPicker()" />
     </md-input-container>
     <md-button class="md-raised md-primary" type="submit" ng-click="mc.showToast($event)">Add This Path!</md-button>
 </form>
