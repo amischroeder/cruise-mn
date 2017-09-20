@@ -3,7 +3,7 @@
 <!-- {{ pc.paths.path }} -->
 <br>
 <div class="allListingInfo" layout="column">
-    <ng-map default-style="true" id="all_map" center="46.3348, -95.6647" zoom="6">
+    <ng-map default-style="true" id="all_map" center="current-position" zoom="6">
         <marker id="{{path.id}}" position="{{path.latitude}}, {{path.longitude}}" ng-repeat="path in pc.paths.list" on-click="pc.showDetail(path)">
         </marker>
         <info-window id="foo-iw">

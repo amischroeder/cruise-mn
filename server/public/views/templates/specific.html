@@ -42,7 +42,7 @@
         </tr>
     </table>
     <br>
-    <ng-map default-style="true" id="specific_map" center="46.3348, -95.6647" zoom="6">
+    <ng-map default-style="true" id="specific_map" center="current-position" zoom="6">
         <marker id="{{path.id}}" position="{{path.latitude}}, {{path.longitude}}" 
         ng-repeat="path in sc.currentPath.details" on-click="sc.showDetail(path)">
         </marker>

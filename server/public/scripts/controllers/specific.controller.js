@@ -8,9 +8,11 @@ myApp.controller('SpecificController', ['PathService', '$routeParams', 'NgMap', 
     vm.map = {};
     NgMap.getMap("specific_map").then(function(map) {
         vm.map = map;
+        // google.maps.event.trigger(map,'resize');
       });
+    
     vm.paths = PathService.paths;
-
+    
     vm.path = {};
     
     // vm.pathInformation = function() {

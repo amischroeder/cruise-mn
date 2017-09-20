@@ -7,9 +7,9 @@
         <input type="text" ng-model="pc.newPath.name" />
     </md-input-container>
     <md-input-container class="md-block">
-        <!-- <label for="photos">Photos:</label>
-        <input ng-model="pc.newPath.photos" /> -->
-        <!-- <input type="button" value="Upload" ng-model="pc.newPath.photos" ng-click="pc.showPicker()" /> -->
+        <label for="photos">Photos:</label>
+        <input ng-model="pc.newPath.photos" />
+        <input type="button" value="Upload" ng-model="pc.newPath.photos" ng-click="pc.showPicker()" />
     </md-input-container>
     <md-input-container class="md-block">
         <label for="address">Address:</label>
@@ -40,9 +40,9 @@
         <input type="real" ng-model="pc.newPath.latitude" />
     </md-input-container>
     <md-input-container class="md-block">
-            <label for="map">Parking Longitude:</label>
-            <input type="real" ng-model="pc.newPath.longitude" />
-        </md-input-container>
+        <label for="map">Parking Longitude:</label>
+        <input type="real" ng-model="pc.newPath.longitude" />
+    </md-input-container>
     <md-button class="md-raised md-primary" type="submit" ng-click="mc.showToast($event)">Add This Path!</md-button>
 </form>
 </div>
