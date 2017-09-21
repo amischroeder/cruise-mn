@@ -37,8 +37,8 @@
                 <td><a ng-href="#/specific/{{path.id}}">{{path.name}}</a></td>
                 <td>{{path.address}}</td>
                 <td>
-                    <button ng-click="pc.updateUpRating(path)">{{path.up_rating}}<i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
-                    <button ng-click="pc.updateDownRating(path)">{{path.down_rating}}<i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
+                    <div ng-click="pc.updateUpRating(path)">{{path.up_rating}}<i class="fa fa-thumbs-up" aria-hidden="true"></i></div>
+                    <div ng-click="pc.updateDownRating(path)">{{path.down_rating}}<i class="fa fa-thumbs-down" aria-hidden="true"></i></div>
                 </td>
             </tr>
         </tbody>

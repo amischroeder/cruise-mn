@@ -13,8 +13,8 @@
         <tr>
             <th>Rating</th>
             <td>{{path.rating}}
-                <button ng-click="sc.updateUpRating(path)">{{path.up_rating}}<i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
-                <button ng-click="sc.updateDownRating(path)">{{path.down_rating}}><i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
+                <div ng-click="sc.updateUpRating(path)">{{path.up_rating}}<i class="fa fa-thumbs-up" aria-hidden="true"></i></div>
+                <div ng-click="sc.updateDownRating(path)">{{path.down_rating}}<i class="fa fa-thumbs-down" aria-hidden="true"></i></div>
             </td>
         </tr>
         <tr>
@@ -39,7 +39,7 @@
         </tr>
         <tr>
             <th>Photos</th>
-            <td><img src="{{path.photos}}"></td>
+            <td><img ng-src="{{path.photos}}"></td>
         </tr>
     </table>
     <br>

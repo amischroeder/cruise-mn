@@ -1,7 +1,7 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <h1>Post New Path!</h1>
 <div layout-padding>
-<form ng-controller="PathController as pc" ng-submit="pc.postNewPath(pc.newPath)">
+<div ng-controller="PathController as pc" >
     <md-input-container class="md-block">
         <label for="name">Path Name:</label>
         <input type="text" ng-model="pc.newPath.name" />
@@ -43,8 +43,8 @@
         <!-- TOOK OUT ng-model="pc.newPath.photos" FROM BELOW -->
         <input type="button" value="Upload" ng-click="pc.showPicker()" />
     </md-input-container>
-    <md-button class="md-raised md-primary" type="submit" ng-click="mc.showToast($event)">Add This Path!</md-button>
-</form>
+    <div class="md-raised md-primary" type="submit" ng-click="mc.showToast($event);pc.postNewPath(pc.newPath)">Add This Path!</div>
+</div>
 </div>
 <a class="navLink" href="#skatepaths">Back to Listings</a>
 
