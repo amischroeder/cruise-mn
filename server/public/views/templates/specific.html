@@ -1,11 +1,13 @@
 
 <div ng-include="'views/partials/nav.html'"></div>
 <div ng-app="myApp" ng-controller="SpecificController as sc">
+      <h2>  {{sc.currentPath.details[0].name}} </h2>
+      <img ng-src="{{sc.currentPath.details[0].photos}}">
     <table ng-repeat="path in sc.currentPath.details">
-        <tr>
+        <!-- <tr>
             <th>Path Title</th>
             <td>{{path.name}}</td>
-        </tr>
+        </tr> -->
         <tr>
             <th>Address</th>
             <td>{{path.address}}</td>
@@ -37,11 +39,12 @@
             <th>Notes</th>
             <td>{{path.notes}}</td>
         </tr>
-        <tr>
+        <!-- <tr>
             <th>Photos</th>
             <td><img ng-src="{{path.photos}}"></td>
-        </tr>
+        </tr> -->
     </table>
+    <!-- <img ng-src="{{sc.currentPath.details[0].photos}}"> -->
     <br>
     <ng-map default-style="true" id="specific_map" center="{{sc.currentPath.details[0].latitude}},{{sc.currentPath.details[0].longitude}}" zoom="6">
         <marker id="{{path.id}}" position="{{path.latitude}}, {{path.longitude}}" ng-repeat="path in sc.currentPath.details" on-click="sc.showDetail(path)">
