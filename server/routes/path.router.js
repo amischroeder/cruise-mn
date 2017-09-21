@@ -29,6 +29,7 @@ router.get('/details', function(req, res){
             res.sendStatus(500);
         } else {
             client.query('SELECT * FROM paths WHERE id=$1', [req.query.id], function (errorMakingQuery, result) {
+                done();
                 if(errorMakingQuery) {
                     console.log('Error Making Query', errorMakingQuery);
                     res.sendStatus(500);
@@ -70,6 +71,7 @@ router.put('/upRating', function(req, res){
             res.sendStatus(500);
         } else {
             client.query('UPDATE paths SET up_rating=$1 WHERE id=$2', [req.body.up_rating, req.body.id], function (errorMakingQuery, result) {
+                done();
                 if(errorMakingQuery) {
                     console.log('Error Making Query', errorMakingQuery);
                     res.sendStatus(500);
