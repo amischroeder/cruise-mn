@@ -42,7 +42,7 @@
         </tr>
     </table>
     <br>
-    <ng-map default-style="true" id="specific_map" center="current-position" zoom="6">
+    <ng-map default-style="true" id="specific_map" center="{{sc.currentPath.details[0].latitude}},{{sc.currentPath.details[0].longitude}}" zoom="6">
         <marker id="{{path.id}}" position="{{path.latitude}}, {{path.longitude}}" ng-repeat="path in sc.currentPath.details" on-click="sc.showDetail(path)">
         </marker>
         <info-window id="boo-iw">
@@ -57,6 +57,9 @@
             </div>
         </info-window>
     </ng-map>
+    <br>
+    <br>
+    <br>
     <br>
     <!-- {{sc.currentPath.details}}
     {{sc.currentPath.details[0].id}} -->
