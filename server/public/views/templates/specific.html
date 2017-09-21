@@ -1,3 +1,4 @@
+
 <div ng-include="'views/partials/nav.html'"></div>
 <div ng-app="myApp" ng-controller="SpecificController as sc">
     <table ng-repeat="path in sc.currentPath.details">
@@ -37,8 +38,8 @@
             <td>{{path.notes}}</td>
         </tr>
         <tr>
-                <th>Photos</th>
-                <td><img src="{{path.photos}}"></td>
+            <th>Photos</th>
+            <td><img src="{{path.photos}}"></td>
         </tr>
     </table>
     <br>

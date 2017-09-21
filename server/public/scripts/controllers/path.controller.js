@@ -30,8 +30,8 @@ myApp.controller('PathController', ['PathService', 'NgMap', function (PathServic
     vm.client = filestack.init('AOxruw8HTHChjTQjVfU0rz');
     vm.showPicker = function () {
         vm.client.pick({
-            accept: 'image/*',
-            imageMax: [600, 400]
+            accept: 'image/*'
+            // imageMax: [600, 400]
         }).then(function (result) {
             vm.newPath.photos = result.filesUploaded[0].url;
         });
