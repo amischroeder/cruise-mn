@@ -35,6 +35,11 @@ myApp.controller('PathController', ['PathService', 'NgMap', function (PathServic
         }).then(function (result) {
             vm.newPath.photos = result.filesUploaded[0].url;
         });
-
     }
+
+    // vm.placeChanged = function() {
+    //     vm.place = this.getPlace();
+    //     console.log('location', vm.place.geometry.location);
+    //     vm.map.setCenter(vm.place.geometry.location);
+    //   }
 }]);

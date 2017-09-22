@@ -8,7 +8,8 @@
     </md-input-container>
     <md-input-container class="md-block">
         <label for="address">Address:</label>
-        <input type="text" ng-model="pc.newPath.address" />
+        <input type="text" ng-model="pc.newPath.address"/>
+        <!-- places-auto-complete size=80 on-place-changed="pc.placeChanged()" -->
     </md-input-container>
     <md-input-container class="md-block">
         <label for="length">Length:</label>
@@ -43,10 +44,12 @@
         <!-- TOOK OUT ng-model="pc.newPath.photos" FROM BELOW -->
         <input type="button" value="Upload" ng-click="pc.showPicker()" />
     </md-input-container>
-    <div class="md-raised md-primary" type="submit" ng-click="mc.showToast($event);pc.postNewPath(pc.newPath)">Add This Path!</div>
+    <a class="floated" href="#skatepaths">Back to List</a>
+    <div  class="floated" type="submit" ng-click="mc.showToast($event);pc.postNewPath(pc.newPath)">Add</div>
+    <!-- <a class="floated" href="#skatepaths">Back to List</a> -->
 </div>
 </div>
-<a class="navLink" href="#skatepaths">Back to Listings</a>
+<!-- <a class="navLink" href="#skatepaths">Back to List</a> -->
 
 
 
