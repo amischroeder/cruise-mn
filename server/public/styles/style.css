@@ -134,3 +134,7 @@ md-toast {
   margin:0 auto;
   position:relative;
 }
+
+#blargButtons {
+  text-align: center;
+}
