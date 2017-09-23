@@ -7,13 +7,14 @@ body, html {
 
 .instructions .container h1 {
   font-size: 50px;
-  font-weight: 600;
+  font-weight: 600
 }
 
 .instructions {
   background-color: #03A9F4;
   color: black;
-  padding: 15px;
+  padding-top: 15px;
+  height: 100%
 }
 
 #entryForm {
@@ -90,22 +91,6 @@ li a:hover {
   border-radius: 10px;
 }
 
-
-/* ng-map#specific_map {
-  width: 500px;
-  height: 300px;
-} */
-
-/* md-content {
-  padding-right: 20px;
-  padding-left: 20px;
-  font-size: xx-large;
-} */
-
-/* md-nav-item {
-  font-size: xx-large;
-} */
-
 img
 {
     max-width: 100%;
@@ -118,13 +103,34 @@ md-toast {
 }
 
 .floated {
-  float:left;
-  margin-right:5px;
+  /* float:left;
+  margin-right:5px; */
   background-color: #03A9F4;
   color: black;
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
-  /* display: inline-block; */
-  border-radius: 10px
+  border-radius: 10px;
+  display:inline-block;
+}
+
+#menuButton{
+  background-color: #40C4FF;
+  display:block; /* change this from inline-block */
+  width:20%; /* setting the width */
+  margin:0 auto;
+  position:relative;
+}
+
+#addButton{
+  background-color: #03A9F4;
+  color: black;
+  border-radius: 10px;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display:block; /* change this from inline-block */
+  width:20%; /* setting the width */
+  margin:0 auto;
+  position:relative;
 }

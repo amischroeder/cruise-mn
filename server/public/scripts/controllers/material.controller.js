@@ -1,7 +1,9 @@
-myApp.controller('MaterialController', ['PathService', '$mdDialog', '$mdToast','$routeParams', '$location', function(PathService, $mdDialog, $mdToast, $routeParams, $location) {
+myApp.controller('MaterialController', ['PathService', 'UserService', '$mdDialog', '$mdToast','$routeParams', '$location', '$mdSidenav', function(PathService, UserService, $mdDialog, $mdToast, $routeParams, $location, $mdSidenav) {
     console.log('MaterialController Loaded');
     
     var vm = this;
+    vm.userService = UserService;
+    vm.userObject = UserService.userObject;
 
     vm.deletePath = function () {
         console.log('pathID:', $routeParams.id);
@@ -31,4 +33,11 @@ myApp.controller('MaterialController', ['PathService', '$mdDialog', '$mdToast','
             .textContent('Path was posted! Check it out on the listing page!')
         );
     }
+
+    //garbage    
+    vm.openRightMenu = function() {
+       $mdSidenav('right').toggle();
+    };
+ 	
+
 }]);
