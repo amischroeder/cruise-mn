@@ -1,8 +1,8 @@
-
-<div ng-include="'views/partials/nav.html'"></div>
+<div ng-include="'views/partials/nav.html'">
+</div>
 <div ng-app="myApp" ng-controller="SpecificController as sc">
-      <h2>  {{sc.currentPath.details[0].name}} </h2>
-      <img ng-src="{{sc.currentPath.details[0].photos}}">
+    <h2> {{sc.currentPath.details[0].name}} </h2>
+    <img ng-src="{{sc.currentPath.details[0].photos}}">
     <table ng-repeat="path in sc.currentPath.details">
         <!-- <tr>
             <th>Path Title</th>
@@ -46,7 +46,8 @@
     </table>
     <!-- <img ng-src="{{sc.currentPath.details[0].photos}}"> -->
     <br>
-    <ng-map default-style="true" id="specific_map" center="{{sc.currentPath.details[0].latitude}},{{sc.currentPath.details[0].longitude}}" zoom="6">
+    <ng-map default-style="true" id="specific_map" center="{{sc.currentPath.details[0].latitude}},{{sc.currentPath.details[0].longitude}}"
+        zoom="6">
         <marker id="{{path.id}}" position="{{path.latitude}}, {{path.longitude}}" ng-repeat="path in sc.currentPath.details" on-click="sc.showDetail(path)">
         </marker>
         <info-window id="boo-iw">
@@ -63,13 +64,13 @@
     </ng-map>
     <br>
     <br>
-    <br>
-    <br>
     <!-- {{sc.currentPath.details}}
     {{sc.currentPath.details[0].id}} -->
-    <a class="floated" href="#skatepaths">Back to List</a>
-    <div class="floated" ng-click="mc.showConfirm($event)">
-        Delete Path
+    <div id="blargButtons">
+        <a class="floated" href="#skatepaths">Back to List</a>
+        <div class="floated" ng-click="mc.showConfirm($event)">
+            Delete Path
+        </div>
     </div>
     <!-- <button ng-click="sc.deletePath(sc.pathID)">Delete Path</button> -->
     <!-- <a class="navLink" href="#skatepaths">Back to Listing</a> -->
