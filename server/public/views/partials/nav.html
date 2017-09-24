@@ -1,12 +1,19 @@
-<div id = "sideNavContainer" ng-cloak>
-<md-content>           
-   <md-button id="menuButton" ng-click = "mc.openRightMenu()"><i class="fa fa-bars" aria-hidden="true"></i></md-button>
-</md-content>
+<div class="instructions">
+  <div class="container">
+    <h1 class="lead">CruiseMN</h1>
 
-<md-sidenav md-component-id = "right" class = "md-sidenav-right">
-   <md-button href="#/user" name="user">User Home</md-button>
-   <md-button href="#/skatepaths" name="skatepaths">Path List</md-button>
-   <md-button href="#/new" name="new">Add New Path</md-button>
-   <md-button class="btn btn-default" ng-click="mc.userService.logout()">Log Out</md-button>
-</md-sidenav>
+    <div id="sideNavContainer" ng-cloak>
+      <md-content>
+           <md-button id="menuButton" ng-click="mc.openRightMenu()"><i class="fa fa-bars" aria-hidden="true"></i></md-button>
+      </md-content>
+
+      <md-sidenav md-component-id="right" class="md-sidenav-right">
+        <md-button href="#/user" name="user">User Home</md-button>
+        <md-button href="#/skatepaths" name="skatepaths">Path List</md-button>
+        <md-button href="#/new" name="new">Add New Path</md-button>
+        <md-button class="btn btn-default" ng-click="mc.userService.logout()">Log Out</md-button>
+      </md-sidenav>
+    </div>
+   
+  </div>
 </div>

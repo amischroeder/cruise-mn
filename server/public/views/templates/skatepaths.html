@@ -33,7 +33,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="path in pc.paths.list | filter:search">
+            <tr ng-repeat="path in pc.paths.list | filter:search" ng-class-odd="'odd'" ng-class-even="'even'">
                 <td><a ng-href="#/specific/{{path.id}}">{{path.name}}</a></td>
                 <td>{{path.address}}</td>
                 <td>

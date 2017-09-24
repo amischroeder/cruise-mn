@@ -2,16 +2,9 @@
 </div>
 <div ng-app="myApp" ng-controller="SpecificController as sc">
     <h2> {{sc.currentPath.details[0].name}} </h2>
+    <h3>{{sc.currentPath.details[0].address}}</h3>
     <img ng-src="{{sc.currentPath.details[0].photos}}">
-    <table ng-repeat="path in sc.currentPath.details">
-        <!-- <tr>
-            <th>Path Title</th>
-            <td>{{path.name}}</td>
-        </tr> -->
-        <tr>
-            <th>Address</th>
-            <td>{{path.address}}</td>
-        </tr>
+    <!-- <table ng-repeat="path in sc.currentPath.details" >
         <tr>
             <th>Rating</th>
             <td>{{path.rating}}
@@ -39,11 +32,25 @@
             <th>Notes</th>
             <td>{{path.notes}}</td>
         </tr>
-        <!-- <tr>
-            <th>Photos</th>
-            <td><img ng-src="{{path.photos}}"></td>
-        </tr> -->
-    </table>
+    </table> -->
+    <div ng-repeat="path in sc.currentPath.details">
+            <h2>Rating</h2>
+            <p>{{path.rating}}
+                <button ng-click="sc.updateUpRating(path)">{{path.up_rating}} <i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+                <button ng-click="sc.updateDownRating(path)">{{path.down_rating}} <i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
+            </p>
+            <h2>Length</h2>
+            <p>{{path.length}}</p>
+            <h2>Pavement Condition</h2>
+            <p>{{path.pavement}}</p>
+            <h2>Difficulty</h2>
+            <p>{{path.difficulty}}</p>
+            <h2>Crowds</h2>
+            <p>{{path.crowds}}</p>
+            <h2>Notes</h2>
+            <p>{{path.notes}}</p>
+
+    </div>
     <!-- <img ng-src="{{sc.currentPath.details[0].photos}}"> -->
     <br>
     <ng-map default-style="true" id="specific_map" center="{{sc.currentPath.details[0].latitude}},{{sc.currentPath.details[0].longitude}}"

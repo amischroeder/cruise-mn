@@ -1,7 +1,7 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: roboto;
   font-size: 14px;
 }
 
@@ -116,10 +116,11 @@ md-toast {
 
 #menuButton{
   background-color: #40C4FF;
-  display:block; /* change this from inline-block */
+  display:block; 
   width:20%; /* setting the width */
   margin:0 auto;
   position:relative;
+  /* float: right; */
 }
 
 #addButton{
@@ -137,4 +138,11 @@ md-toast {
 
 #blargButtons {
   text-align: center;
+}
+
+.even {
+  background-color: #f1f1f1;
+}
+.odd {
+  background-color: #CADEE4
 }

@@ -2,7 +2,7 @@ var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial', 'ngMap']);
 
 
 /// Routes ///
-myApp.config(function($routeProvider, $locationProvider) {
+myApp.config(function($routeProvider, $locationProvider, $mdGestureProvider) {
   $locationProvider.hashPrefix('');
   console.log('myApp -- config')
   $routeProvider
@@ -47,4 +47,5 @@ myApp.config(function($routeProvider, $locationProvider) {
     .otherwise({
       redirectTo: 'home'
     });
+    $mdGestureProvider.skipClickHijack();
 });
