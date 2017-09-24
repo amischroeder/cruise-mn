@@ -1,8 +1,6 @@
 <md-content>
 <div ng-include="'views/partials/nav.html'"></div>
 <br>
-<!-- {{ pc.paths.path }} -->
-<br>
 <div class="allListingInfo" layout="column">
     <ng-map default-style="true" id="all_map" center="current-position" zoom="6">
         <marker id="{{path.id}}" position="{{path.latitude}}, {{path.longitude}}" ng-repeat="path in pc.paths.list" on-click="pc.showDetail(path)">
@@ -46,10 +44,9 @@
 
 </div>
 <br>
-<br>
+<div id="addInfo">
 <a id="addButton" href="#new">Add New Path</a>
-<br>
-<br>
+</div>
 <br>
 <!-- <div ng-controller="UserController as uc">
         <button class="btn btn-default" ng-click="uc.userService.logout()">Log Out</button>

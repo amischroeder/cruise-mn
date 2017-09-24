@@ -1,7 +1,7 @@
 <div ng-include="'views/partials/nav.html'">
 </div>
 <div ng-app="myApp" ng-controller="SpecificController as sc">
-    <h2> {{sc.currentPath.details[0].name}} </h2>
+    <h1> {{sc.currentPath.details[0].name}} </h1>
     <h3>{{sc.currentPath.details[0].address}}</h3>
     <img ng-src="{{sc.currentPath.details[0].photos}}">
     <!-- <table ng-repeat="path in sc.currentPath.details" >

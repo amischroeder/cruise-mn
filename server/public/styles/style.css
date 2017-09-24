@@ -3,15 +3,19 @@ body, html {
   padding: 0;
   font-family: roboto;
   font-size: 14px;
+  /* background-color: #C7EBF0; */
 }
 
 .instructions .container h1 {
-  font-size: 50px;
-  font-weight: 600
+  font-size: 65px;
+  font-weight: 600;
+  text-shadow: 2px 2px lightgray;
+  text-align: center;
 }
 
 .instructions {
-  background-color: #03A9F4;
+  background-color: #BFD5E2;
+  /* background: linear-gradient(to bottom, #e4f5fc 0%,#bfe8f9 27%,#9fd8ef 52%,#2ab0ed 100%); */
   color: black;
   padding-top: 15px;
   height: 100%
@@ -82,7 +86,7 @@ li a:hover {
 
 /* These are for the a links I addded for site navigation */
 .navLink:link, .navLink:visited {
-  background-color: #03A9F4;
+  background-color: #B1B5C8;;
   color: black;
   padding: 14px 25px;
   text-align: center;
@@ -105,7 +109,7 @@ md-toast {
 .floated {
   /* float:left;
   margin-right:5px; */
-  background-color: #03A9F4;
+  background-color: #B1B5C8;
   color: black;
   padding: 14px 25px;
   text-align: center;
@@ -115,7 +119,7 @@ md-toast {
 }
 
 #menuButton{
-  background-color: #40C4FF;
+  background-color: #B1B5C8;
   display:block; 
   width:20%; /* setting the width */
   margin:0 auto;
@@ -124,7 +128,7 @@ md-toast {
 }
 
 #addButton{
-  background-color: #03A9F4;
+  background-color: #B1B5C8;
   color: black;
   border-radius: 10px;
   padding: 14px 25px;
@@ -140,9 +144,17 @@ md-toast {
   text-align: center;
 }
 
-.even {
+.odd {
   background-color: #f1f1f1;
 }
-.odd {
+/* .even {
   background-color: #CADEE4
+} */
+
+/* .allListingInfo {
+  background-color: #C7EBF0;
 }
+
+#addInfo {
+  background-color: #C7EBF0;
+} */
