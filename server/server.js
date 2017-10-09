@@ -54,3 +54,10 @@ app.get('/db', function (request, response) {
       });
     });
   });
+
+  if(process.env.DATABASE_URL != undefined) {
+    connectionString = process.env.DATABASE_URL + "?ssl=true";
+} else {
+    // running locally, use our local database instead
+    connectionString = 'postgres://localhost:5432/cruise-mn';
+}
