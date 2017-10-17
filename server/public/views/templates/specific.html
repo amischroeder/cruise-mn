@@ -36,8 +36,8 @@
     <div ng-repeat="path in sc.currentPath.details">
             <h2>Rating</h2>
             <p>{{path.rating}}
-                <button ng-click="sc.updateUpRating(path)">{{path.up_rating}} <i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
-                <button ng-click="sc.updateDownRating(path)">{{path.down_rating}} <i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
+                <button ng-click="sc.updateUpRating(path)">{{path.up_rating}} <i class="fa fa-thumbs-up" aria-label="Likes"></i></button>
+                <button ng-click="sc.updateDownRating(path)">{{path.down_rating}} <i class="fa fa-thumbs-down" aria-label="Dislikes"></i></button>
             </p>
             <h2>Length</h2>
             <p>{{path.length}}</p>
