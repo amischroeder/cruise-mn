@@ -1,12 +1,10 @@
 # Name of Project
 
-One Paragraph of project description goes here. Link to the live version of the app if it's hosted on Heroku.
-
-PathFinder MN is a full-stack mobile web application designed for longboarders to locate the best paths to ride based on location, pavement conditions, length, and typical crowds. Any user will be able to see the existing data for paths and filter by rating, length, and location. A registered user will be able to make notes/edits on existing paths, post new paths to the database, and rate each path. 
+CruiseMN   is   an   app   for   longboarders   to   locate   paths   by   map,   find   exact   parking   directions, search   for   paths   by   keyword,   view   detailed   path   information   and   photos,   rate each   path, and   add   additional   paths   to   the   current   collection .
 
 ## Built With
 
-List technologies and frameworks here
+SQL,   JavaScript,   Express,   AngularJS,   Node,   HTML5,   CSS3,   Angular Material,   Git,   Github,   Google   API,   Filestack   API,   Heroku
 
 ## Getting Started
 
@@ -24,34 +22,38 @@ Link to software that is required to install the app (e.g. node).
 
 Steps to get the development environment running.
 
-```sql
-CREATE TABLE "users" (
-  "id" serial primary key,
-  "username" varchar(80) not null UNIQUE,
-  "password" varchar(240) not null
-);
-```
+Clone this repository
 
-## Screen Shot
+Install Node.js
 
-Include one or two screen shots of your project here (optional). Remove if unused.
+In terminal, cd into the folder where this repository is
+ex:
+$ cd cruiseMN
 
-## Documentation
+In terminal, use 'npm install' to get all of the necessary dependencies
+$ npm install
 
-Link to a read-only version of your scope document or other relevant documentation here (optional). Remove if unused.
+Copy queries from the data.sql file and execute queries. 
+
+To get the code running, in terminal type 'node app.js'
+$ node app.js
+
+In your preferred browser, go to
+localhost:5000
 
 ### Completed Features
 
 High level list of items completed.
 
-- [x] Feature a
-- [x] Feature b
+- [x] View all paths and details
+- [x] Find directions by map pinpoints
+- [x] Able to add/delete paths
 
 ### Next Steps
 
 Features that you would like to add at some point in the future.
 
-- [ ] Feature c
+- [ ] Add Log feature to track path distance, date, length
 
 ## Deployment
 
@@ -64,4 +66,4 @@ Add additional notes about how to deploy this on a live system
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
+* Instructors and Betelgeuse cohort at Prime
