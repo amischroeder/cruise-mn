@@ -1,4 +1,4 @@
-# Name of Project
+# CruiseMN
 
 CruiseMN   is   an   app   for   longboarders   to   locate   paths   by   map,   find   exact   parking   directions, search   for   paths   by   keyword,   view   detailed   path   information   and   photos,   rate each   path, and   add   additional   paths   to   the   current   collection .
 
