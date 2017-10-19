@@ -5,12 +5,14 @@ myApp.controller('MaterialController', ['PathService', 'UserService', '$mdDialog
     vm.userService = UserService;
     vm.userObject = UserService.userObject;
 
+    // delete path using routeParams
     vm.deletePath = function () {
         console.log('pathID:', $routeParams.id);
         PathService.deletePath($routeParams.id);
         $location.path("/skatepaths");
     };
 
+    // shows confirmation to delete
     vm.status = '  ';
     vm.showConfirm = function(ev) {
         var confirm = $mdDialog.confirm()
@@ -26,7 +28,7 @@ myApp.controller('MaterialController', ['PathService', 'UserService', '$mdDialog
           });
     };
 
-
+    // show toast confirmation that path was posted
     vm.showToast = function (ev) {
         $mdToast.show(
             $mdToast.simple()
@@ -34,7 +36,7 @@ myApp.controller('MaterialController', ['PathService', 'UserService', '$mdDialog
         );
     }
 
-    //garbage    
+    // opens right sidenav when click menu icon 
     vm.openRightMenu = function() {
        $mdSidenav('right').toggle();
     };

@@ -2,6 +2,7 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <br>
 <div class="allListingInfo" layout="column">
+    <!-- shows map with all pinpoints -->
     <ng-map default-style="true" id="all_map" center="current-position" zoom="6">
         <marker id="{{path.id}}" position="{{path.latitude}}, {{path.longitude}}" ng-repeat="path in pc.paths.list" on-click="pc.showDetail(path)">
         </marker>
@@ -19,9 +20,10 @@
         </info-window>
     </ng-map>
 
-
+<!-- search bar -->
     <p>Search Listings: <input type="text" placeholder="ex. Stillwater" ng-model="search"></p>
 
+    <!-- table of basic path info -->
     <table>
         <thead>
             <tr>
@@ -48,7 +50,4 @@
 <a id="addButton" href="#new">Add New Path</a>
 </div>
 <br>
-<!-- <div ng-controller="UserController as uc">
-        <button class="btn btn-default" ng-click="uc.userService.logout()">Log Out</button>
-</div> -->
 </md-content>

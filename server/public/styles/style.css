@@ -15,7 +15,6 @@ body, html {
 
 .instructions {
   background-color: #BFD5E2;
-  /* background: linear-gradient(to bottom, #e4f5fc 0%,#bfe8f9 27%,#9fd8ef 52%,#2ab0ed 100%); */
   color: black;
   padding-top: 15px;
   height: 100%
@@ -98,7 +97,6 @@ li a:hover {
 img
 {
     max-width: 100%;
-    /* min-width: 300px; */
     height: auto;
 }
 
@@ -107,8 +105,6 @@ md-toast {
 }
 
 .floated {
-  /* float:left;
-  margin-right:5px; */
   background-color: #B1B5C8;
   color: black;
   padding: 14px 25px;
@@ -147,17 +143,6 @@ md-toast {
 .odd {
   background-color: #f1f1f1;
 }
-/* .even {
-  background-color: #CADEE4
-} */
-
-/* .allListingInfo {
-  background-color: #C7EBF0;
-}
-
-#addInfo {
-  background-color: #C7EBF0;
-} */
 
 a:visited {
   color: darkblue;

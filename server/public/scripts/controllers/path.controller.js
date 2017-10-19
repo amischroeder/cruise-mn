@@ -2,32 +2,36 @@ myApp.controller('PathController', ['PathService', 'NgMap', function (PathServic
     console.log('PathController created');
     var vm = this;
     vm.map = {};
+    vm.updateUpRating = PathService.updateUpRating;
+    vm.updateDownRating = PathService.updateDownRating;
+    vm.paths = PathService.paths;
+    vm.client = filestack.init('AOxruw8HTHChjTQjVfU0rz');
+
+    // calls get route
+    PathService.getPaths();
+
+    // get function for inital map with all pinpoints (all_map)
     NgMap.getMap("all_map").then(function (map) {
         console.log('this is that map', map);
         vm.map = map;
         google.maps.event.trigger(map, 'resize');
     });
 
-    vm.paths = PathService.paths;
-
-
-    PathService.getPaths();
-    vm.updateUpRating = PathService.updateUpRating;
-    vm.updateDownRating = PathService.updateDownRating;
-
+    // post new path
     vm.postNewPath = function (newPath) {
         console.log('post button clicked');
         console.log('newPath:', newPath);
         PathService.postNewPath(newPath);
     };
 
+    // show info window with detail of path clicked on
     vm.showDetail = function (e, path) {
         console.log(path);
         vm.paths.path = path;
         vm.map.showInfoWindow('foo-iw', this);
     };
 
-    vm.client = filestack.init('AOxruw8HTHChjTQjVfU0rz');
+    // shows image uploader
     vm.showPicker = function () {
         vm.client.pick({
             accept: 'image/*'
@@ -37,9 +41,4 @@ myApp.controller('PathController', ['PathService', 'NgMap', function (PathServic
         });
     }
 
-    // vm.placeChanged = function() {
-    //     vm.place = this.getPlace();
-    //     console.log('location', vm.place.geometry.location);
-    //     vm.map.setCenter(vm.place.geometry.location);
-    //   }
 }]);

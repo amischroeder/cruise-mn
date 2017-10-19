@@ -55,6 +55,7 @@ app.get('/db', function (request, response) {
     });
   });
 
+  // deployment
   if(process.env.DATABASE_URL != undefined) {
     connectionString = process.env.DATABASE_URL + "?ssl=true";
 } else {

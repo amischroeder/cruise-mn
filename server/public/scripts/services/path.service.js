@@ -7,6 +7,7 @@ myApp.service('PathService', ['$http', function ($http) {
     };
     self.currentPath = {details: {}};
 
+    // get all paths
     self.getPaths = function () {
         $http({
             method: 'GET',
@@ -18,6 +19,7 @@ myApp.service('PathService', ['$http', function ($http) {
         })
     };
 
+    // post new path
     self.postNewPath = function(newPath) {
         console.log('newPath:', newPath);
         $http({
@@ -30,6 +32,7 @@ myApp.service('PathService', ['$http', function ($http) {
         })
     }
 
+    // get details for specific path
     self.getDetails = function(pathID) {
         $http({
             method: 'GET',
@@ -42,6 +45,7 @@ myApp.service('PathService', ['$http', function ($http) {
         })
     };
 
+    // click count for thumbs up rating
     self.updateUpRating = function(trail) {
         console.log('ze butto has been clicka');
         $http({
@@ -53,6 +57,7 @@ myApp.service('PathService', ['$http', function ($http) {
         });
     }
 
+    // click count for thumbs down rating
     self.updateDownRating = function(trail) {
         console.log('ze 2nd butto has been clicka');
         $http({
@@ -64,14 +69,12 @@ myApp.service('PathService', ['$http', function ($http) {
         });
     }
     
+    // delete path
     self.deletePath = function (pathID) {
         console.log('delete clicked', pathID);
         $http({
             method: 'DELETE',
             url: '/specific/' + pathID
-            // params: {
-            //     id: pathID
-            // }
         }).then(function(response){
             self.getPaths();
         })
